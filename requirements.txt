@@ -1,0 +1,8 @@
+torch
+torchvision
+numpy<2
+Pillow
+timm
+einops
+scipy
+monai
