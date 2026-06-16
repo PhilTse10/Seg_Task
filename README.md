@@ -17,6 +17,7 @@ python train_test/train.py \
   --encoder {encoder} \
   --csv_preset {preset} \
   --output_dir ./output/{encoder}_{preset}
+
 例如:
 python train_test/train.py \
   --encoder echocare 
@@ -31,6 +32,7 @@ python train_test/test.py \
   --csv_preset {preset} \
   --split val \
   --output_dir ./output/{encoder}_{preset}
+
 例如：
   python train_test/test.py \
   --encoder echocare \
