@@ -1,7 +1,7 @@
 # Seg_Task
-分割任务代码
 
-当前默认超参
+## 当前默认超参
+```bash
 参数	默认值
 --epochs  50
 --lr  0.0002
@@ -11,9 +11,11 @@
 --mask_values  0,3,4
 --val_freq  1（每 epoch 验证）
 --save_freq  10（每 10 epoch 存一次）
+```
 
+
+## 训练指令：
 ```bash
-训练指令：
 python train_test/train.py \
   --encoder {encoder} \
   --csv_preset {preset} \
@@ -80,13 +82,10 @@ python train_test/test.py \
   --encoder echocare \
   --checkpoint ./output/echocare_4ch_train100/checkpoint_echocare_dpt_seg_best.pth \
   --csv_file /sdb1/liran/Downstream_task/4CH/dataset_4ch_train100.csv \
-  --split val \
+  --split test \
   --output_dir ./output/echocare_4ch_train100
 ```
-
-
 注意：**不要同时传 `--csv_preset`**，否则 preset 会覆盖 `--csv_file`（见 `train_test/train.py` 中 `resolve_csv_file`）。
-
 
 
 ### 方式二：修改预设（适合固定数据集、反复使用）
