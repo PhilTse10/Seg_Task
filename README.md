@@ -12,6 +12,7 @@
 --val_freq  1（每 epoch 验证）
 --save_freq  10（每 10 epoch 存一次）
 
+```bash
 训练指令：
 python train_test/train.py \
   --encoder {encoder} \
@@ -40,7 +41,7 @@ python train_test/test.py \
   --csv_preset train100 \
   --split test \
   --output_dir ./output/echocare_train100
-
+```
 
 ## 训练数据路径修改说明
 
@@ -66,7 +67,23 @@ python train_test/test.py \
   --csv_file /你的路径/dataset.csv \
   --split val \
   --output_dir ./output/echocare_custom
+
+# 例如：
+cd /sdb1/liran/Seg_Task
+
+python train_test/train.py \
+  --encoder echocare \
+  --csv_file /sdb1/liran/Downstream_task/4CH/dataset_4ch_train100.csv \
+  --output_dir ./output/echocare_4ch_train100
+
+python train_test/test.py \
+  --encoder echocare \
+  --checkpoint ./output/echocare_4ch_train100/checkpoint_echocare_dpt_seg_best.pth \
+  --csv_file /sdb1/liran/Downstream_task/4CH/dataset_4ch_train100.csv \
+  --split val \
+  --output_dir ./output/echocare_4ch_train100
 ```
+
 
 注意：**不要同时传 `--csv_preset`**，否则 preset 会覆盖 `--csv_file`（见 `train_test/train.py` 中 `resolve_csv_file`）。
 
