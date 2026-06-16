@@ -40,6 +40,7 @@ ENCODER_CONFIGS: Dict[str, Dict[str, Any]] = {
     },
 }
 
+# 数据集路径
 CSV_PRESETS = {
     "train10": "/sdb1/liran/downsteam_code/3VT/dataset_train10.csv",
     "train20": "/sdb1/liran/downsteam_code/3VT/dataset_train20.csv",
