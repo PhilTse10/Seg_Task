@@ -20,8 +20,8 @@ python train_test/train.py \
 
 例如:
 python train_test/train.py \
-  --encoder echocare 
-  --csv_preset train100 
+  --encoder echocare \
+  --csv_preset train100 \
   --output_dir ./output/echocare_train100
 
 
